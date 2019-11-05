@@ -1,0 +1,30 @@
+﻿@model MyBlog.Models.Config.Config
+
+<footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                @if (Model.Wbd != null && Model.Wbd.TryGetValue("y", out var y))
+                {
+                    <span>&copy; @y-@DateTime.Now.Year @(string.IsNullOrEmpty(Model.Author) ? Model.Author : Model.Title)</span>
+                }
+                else
+                {
+                    <span>&copy; @DateTime.Now.Year @(string.IsNullOrEmpty(Model.Author) ? Model.Author : Model.Title)</span>
+                }
+                @if (!string.IsNullOrEmpty(Model.BeiAn))
+                {
+                    <br/>
+                    <a href="http://beian.miit.gov.cn/" target="_blank">@Model.BeiAn</a>
+                }
+            </div>
+            <div class="footer-right">
+                @if (!String.IsNullOrEmpty(Model.UpYun))
+                {
+                    <a href="@Model.UpYun" target="_blank"> &nbsp; <img src="img/upyun.png" width="100"></a>
+                }
+                <a href="https://github.com/MonoLogueChi/MyBlog" target="_blank">MyBlog</a> Theme <a href="https://github.com/MonoLogueChi/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+            </div>
+        </div>
+    </div>
+</footer>

@@ -1,0 +1,15 @@
+﻿@model MyBlog.Models.Config.Config
+<meta charset="utf-8"/>
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="dns-prefetch" href="@Model.Url">
+<title>@Model.Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+@if (!string.IsNullOrEmpty(Model.Favicon))
+{
+    <link rel="icon" href="@Model.Favicon">
+}
+<style type="text/css">
+    #container.show { background: linear-gradient(200deg, #a0cfe4, #e8c37e); }
+</style>
+<partial name="_layout/_partial/css"/>

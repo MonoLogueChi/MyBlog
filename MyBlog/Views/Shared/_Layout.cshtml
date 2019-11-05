@@ -1,0 +1,13 @@
+﻿@model MyBlog.Models.Config.Config
+
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <partial name="_layout/_partial/head" model="@Model"/>
+</head>
+<body>
+@RenderBody()
+<partial name="_layout/_partial/footer" model="@Model"/>
+@RenderSection("Scripts", false)
+</body>
+</html>
